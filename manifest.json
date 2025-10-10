@@ -1,0 +1,76 @@
+{
+  "run_id": "2025-10-05T02:09:45Z_divine_haven.universal_v1",
+  "run_ts": "2025-10-05T02:09:45",
+  "pipeline_version": "embed-pipeline@1.2.0",
+  "source_version": "divine_haven.universal_v1",
+  "translation_set": [
+    "NIV",
+    "ESV",
+    "NLT",
+    "KJV",
+    "NKJV",
+    "ASV",
+    "NASU",
+    "NIRV",
+    "RVR1960",
+    "NVI",
+    "LXX",
+    "TNK",
+    "NASB",
+    "NET"
+  ],
+  "languages": [
+    "en",
+    "es",
+    "el",
+    "he"
+  ],
+  "license": "internal-use",
+  "operator": "pipeline/init:embeddinggemma-768",
+  "embedding_recipe": {
+    "embedding_model": "embeddinggemma",
+    "embedding_dim": 768,
+    "pooling": "mean",
+    "normalize": true,
+    "tokenizer": null,
+    "truncation_strategy": "sliding",
+    "chunking": {
+      "granularity": "sliding",
+      "window_size": 128,
+      "stride": 32
+    },
+    "preprocess": {
+      "lower": false,
+      "strip_punct": false,
+      "collapse_ws": true
+    },
+    "filters": {
+      "books_included": "all",
+      "translations_included": null
+    }
+  },
+  "index_plan": {
+    "vectorscale": {
+      "type": "hnsw",
+      "params": {
+        "m": 32,
+        "ef_construction": 200,
+        "ef_search": 64
+      }
+    },
+    "hybrid": {
+      "vector_k": 50,
+      "fts_k": 50,
+      "fusion": {
+        "method": "rrf",
+        "k": 60,
+        "weight_vector": null
+      },
+      "fts": {
+        "dictionary": "simple",
+        "stopwords": null
+      }
+    }
+  },
+  "batches": []
+}

@@ -1,0 +1,1 @@
+"""Divine Haven FastAPI Application"""

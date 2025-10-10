@@ -1,0 +1,24 @@
+# Slim Python base
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# System deps (psycopg, build)
+RUN apt-get update && apt-get install -y build-essential curl libpq-dev && rm -rf /var/lib/apt/lists/*
+
+# Install uv package manager
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh &&     mv /root/.local/bin/uv /usr/local/bin/uv &&     mv /root/.local/bin/uvx /usr/local/bin/uvx
+
+# Copy project files
+COPY uv.lock pyproject.toml ./
+COPY backend/ ./backend/
+
+# Install dependencies using uv sync (reads uv.lock properly)
+# --frozen = don't update lockfile
+# --no-dev = skip dev dependencies
+RUN uv sync --frozen --no-dev
+
+EXPOSE 8000
+
+# Use uv run to execute with the virtual environment
+CMD ["uv", "run", "uvicorn", "backend.app.main:app", "--host", "0.0.0.0", "--port", "8000"]

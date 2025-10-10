@@ -1,0 +1,1175 @@
+2025-10-09 04:56:08 | INFO     | tests                | pytest_sessionstart       | Python version: 3.12.9
+2025-10-09 04:56:08 | INFO     | tests                | pytest_sessionstart       | Test directory: D:\os-agnostic-fs\divinehaven-gpt-guided-build\backend
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetCRUD::test_create_asset
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:08 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:08 | WARNING  | backend.app.middleware.auth | __init__                  | JWTAuthMiddleware disabled - missing secret key
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:08 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/assets/ "HTTP/1.1 201 Created"
+2025-10-09 04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetCRUD::test_create_asset
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetCRUD::test_create_asset
+2025-10-09 04:56:08 | DEBUG    | neo4j.pool           | close                     | [#0000]  _: <POOL> close
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetCRUD::test_list_assets
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:08 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:08 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/assets/?limit=10&offset=0 "HTTP/1.1 200 OK"
+2025-10-09 04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetCRUD::test_list_assets
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetCRUD::test_list_assets
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetCRUD::test_get_asset_by_id
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:08 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:08 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/assets/test_asset_id "HTTP/1.1 200 OK"
+2025-10-09 04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetCRUD::test_get_asset_by_id
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetCRUD::test_get_asset_by_id
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetCRUD::test_update_asset
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:08 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:08 | INFO     | httpx                | _send_single_request      | HTTP Request: PATCH http://testserver/v1/assets/test_asset_id "HTTP/1.1 200 OK"
+2025-10-09 04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetCRUD::test_update_asset
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetCRUD::test_update_asset
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetCRUD::test_delete_asset
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:08 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:08 | INFO     | httpx                | _send_single_request      | HTTP Request: DELETE http://testserver/v1/assets/test_asset_id "HTTP/1.1 204 No Content"
+2025-10-09 04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetCRUD::test_delete_asset
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetCRUD::test_delete_asset
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetSearch::test_asset_search
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:08 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:08 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/assets/search "HTTP/1.1 200 OK"
+2025-10-09 04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetSearch::test_asset_search
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetSearch::test_asset_search
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetEmbeddings::test_get_asset_embedding
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:08 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:08 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/assets/test_asset_id/embedding "HTTP/1.1 200 OK"
+2025-10-09 04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetEmbeddings::test_get_asset_embedding
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetEmbeddings::test_get_asset_embedding
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetEmbeddings::test_set_asset_embedding
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:08 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:08 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/assets/test_asset_id/embedding "HTTP/1.1 200 OK"
+2025-10-09 04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetEmbeddings::test_set_asset_embedding
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetEmbeddings::test_set_asset_embedding
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetEmbeddings::test_delete_asset_embedding
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:08 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:08 | INFO     | httpx                | _send_single_request      | HTTP Request: DELETE http://testserver/v1/assets/test_asset_id/embedding "HTTP/1.1 204 No Content"
+2025-10-09 04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetEmbeddings::test_delete_asset_embedding
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetEmbeddings::test_delete_asset_embedding
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetVerseLinks::test_create_asset_links
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:08 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:08 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/assets/test_asset_id/links "HTTP/1.1 200 OK"
+2025-10-09 04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetVerseLinks::test_create_asset_links
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetVerseLinks::test_create_asset_links
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetVerseLinks::test_list_asset_links
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:08 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:08 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/assets/test_asset_id/links "HTTP/1.1 200 OK"
+2025-10-09 04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetVerseLinks::test_list_asset_links
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetVerseLinks::test_list_asset_links
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetVerseLinks::test_delete_asset_links
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:08 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:08 | INFO     | httpx                | _send_single_request      | HTTP Request: DELETE http://testserver/v1/assets/test_asset_id/links?verse_ids=NIV:1:1:1 "HTTP/1.1 200 OK"
+2025-10-09 04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetVerseLinks::test_delete_asset_links
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetVerseLinks::test_delete_asset_links
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestBatchVerses::test_batch_verses_basic
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:08 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/batch/verses "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestBatchVerses::test_batch_verses_basic
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestBatchVerses::test_batch_verses_basic
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestBatchVerses::test_batch_verses_deduplication
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/batch/verses "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestBatchVerses::test_batch_verses_deduplication
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestBatchVerses::test_batch_verses_deduplication
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestBatchVerses::test_batch_verses_missing_tracking
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/batch/verses "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestBatchVerses::test_batch_verses_missing_tracking
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestBatchVerses::test_batch_verses_missing_tracking
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestBatchVerses::test_batch_verses_max_limit
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/batch/verses "HTTP/1.1 422 Unprocessable Entity"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestBatchVerses::test_batch_verses_max_limit
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestBatchVerses::test_batch_verses_max_limit
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestBatchVerses::test_batch_verses_empty_list
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/batch/verses "HTTP/1.1 422 Unprocessable Entity"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestBatchVerses::test_batch_verses_empty_list
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestBatchVerses::test_batch_verses_empty_list
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestBatchVerses::test_batch_verses_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/batch/verses "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestBatchVerses::test_batch_verses_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestBatchVerses::test_batch_verses_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_basic
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/batch/translations/compare "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestTranslationComparison::test_translation_comparison_basic
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_basic
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_multiple_verses
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/batch/translations/compare "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestTranslationComparison::test_translation_comparison_multiple_verses
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_multiple_verses
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_missing_translations
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/batch/translations/compare "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestTranslationComparison::test_translation_comparison_missing_translations
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_missing_translations
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_max_references
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/batch/translations/compare "HTTP/1.1 422 Unprocessable Entity"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestTranslationComparison::test_translation_comparison_max_references
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_max_references
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_max_translations
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/batch/translations/compare "HTTP/1.1 422 Unprocessable Entity"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestTranslationComparison::test_translation_comparison_max_translations
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_max_translations
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/batch/translations/compare "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestTranslationComparison::test_translation_comparison_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_basic
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/batch/embeddings "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_basic
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_basic
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_missing_tracking
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/batch/embeddings "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_missing_tracking
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_missing_tracking
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_max_limit
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/batch/embeddings "HTTP/1.1 422 Unprocessable Entity"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_max_limit
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_max_limit
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/batch/embeddings "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_basic
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/chunks/search "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestChunkSearch::test_chunk_search_basic
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_basic
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_translation_filter
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/chunks/search "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_translation_filter
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_translation_filter
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_book_filter
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/chunks/search "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_book_filter
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_book_filter
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_testament_filter
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/chunks/search "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_testament_filter
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_testament_filter
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_window_size_filter
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/chunks/search "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_window_size_filter
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_window_size_filter
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_context
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/chunks/search "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_context
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_context
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_pagination
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/chunks/search "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/chunks/search "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestChunkSearch::test_chunk_search_pagination
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_pagination
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_wrong_dimension
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/chunks/search "HTTP/1.1 422 Unprocessable Entity"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestChunkSearch::test_chunk_search_wrong_dimension
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_wrong_dimension
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/chunks/search "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestChunkSearch::test_chunk_search_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestGetChunkById::test_get_chunk_not_implemented
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/chunks/test_chunk_id "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestGetChunkById::test_get_chunk_not_implemented
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestGetChunkById::test_get_chunk_not_implemented
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_graph.py::TestParallels::test_get_parallels_by_verse_id
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/graph/parallels/NIV:1:1:1 "HTTP/1.1 404 Not Found"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_graph.py::TestParallels::test_get_parallels_by_verse_id
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_graph.py::TestParallels::test_get_parallels_by_verse_id
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_graph.py::TestParallels::test_get_parallels_by_cvk
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/graph/cv/1:1:1:/renditions "HTTP/1.1 404 Not Found"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_graph.py::TestParallels::test_get_parallels_by_cvk
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_graph.py::TestParallels::test_get_parallels_by_cvk
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_graph.py::TestParallels::test_parallels_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/graph/parallels/NIV:1:1:1 "HTTP/1.1 404 Not Found"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_graph.py::TestParallels::test_parallels_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_graph.py::TestParallels::test_parallels_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_health.py::TestHealth::test_health_check
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/healthz "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_health.py::TestHealth::test_health_check
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_health.py::TestHealth::test_health_check
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_health.py::TestHealth::test_health_check_always_available
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/healthz "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_health.py::TestHealth::test_health_check_always_available
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_health.py::TestHealth::test_health_check_always_available
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_health.py::TestMetrics::test_metrics_endpoint
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/metrics "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_health.py::TestMetrics::test_metrics_endpoint
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_health.py::TestMetrics::test_metrics_endpoint
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_health.py::TestRootEndpoint::test_root_endpoint
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/ "HTTP/1.1 404 Not Found"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_health.py::TestRootEndpoint::test_root_endpoint
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_health.py::TestRootEndpoint::test_root_endpoint
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestFullTextSearch::test_fts_basic_search
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/fts "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestFullTextSearch::test_fts_basic_search
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestFullTextSearch::test_fts_basic_search
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestFullTextSearch::test_fts_with_translation_filter
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/fts "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestFullTextSearch::test_fts_with_translation_filter
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestFullTextSearch::test_fts_with_translation_filter
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestFullTextSearch::test_fts_pagination
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/fts "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/fts "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestFullTextSearch::test_fts_pagination
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestFullTextSearch::test_fts_pagination
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestFullTextSearch::test_fts_empty_query
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/fts "HTTP/1.1 422 Unprocessable Entity"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestFullTextSearch::test_fts_empty_query
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestFullTextSearch::test_fts_empty_query
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestFullTextSearch::test_fts_limit_boundaries
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/fts "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/fts "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/fts "HTTP/1.1 422 Unprocessable Entity"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestFullTextSearch::test_fts_limit_boundaries
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestFullTextSearch::test_fts_limit_boundaries
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestFullTextSearch::test_fts_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/fts "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestFullTextSearch::test_fts_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestFullTextSearch::test_fts_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestVectorSearch::test_vector_search_basic
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/vector "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestVectorSearch::test_vector_search_basic
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestVectorSearch::test_vector_search_basic
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestVectorSearch::test_vector_search_wrong_dimension
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/vector "HTTP/1.1 422 Unprocessable Entity"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestVectorSearch::test_vector_search_wrong_dimension
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestVectorSearch::test_vector_search_wrong_dimension
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestVectorSearch::test_vector_search_with_translation_filter
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/vector "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestVectorSearch::test_vector_search_with_translation_filter
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestVectorSearch::test_vector_search_with_translation_filter
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestVectorSearch::test_vector_search_top_k_limits
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/vector "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/vector "HTTP/1.1 422 Unprocessable Entity"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestVectorSearch::test_vector_search_top_k_limits
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestVectorSearch::test_vector_search_top_k_limits
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestVectorSearch::test_vector_search_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/vector "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestVectorSearch::test_vector_search_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestVectorSearch::test_vector_search_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestHybridSearch::test_hybrid_search_both_modes
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/hybrid "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestHybridSearch::test_hybrid_search_both_modes
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestHybridSearch::test_hybrid_search_both_modes
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestHybridSearch::test_hybrid_search_text_only
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/hybrid "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestHybridSearch::test_hybrid_search_text_only
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestHybridSearch::test_hybrid_search_text_only
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestHybridSearch::test_hybrid_search_vector_only
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/hybrid "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestHybridSearch::test_hybrid_search_vector_only
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestHybridSearch::test_hybrid_search_vector_only
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestHybridSearch::test_hybrid_search_no_query
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/hybrid "HTTP/1.1 400 Bad Request"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestHybridSearch::test_hybrid_search_no_query
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestHybridSearch::test_hybrid_search_no_query
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestHybridSearch::test_hybrid_search_rrf_parameter
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/hybrid "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestHybridSearch::test_hybrid_search_rrf_parameter
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestHybridSearch::test_hybrid_search_rrf_parameter
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestHybridSearch::test_hybrid_search_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/hybrid "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestHybridSearch::test_hybrid_search_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestHybridSearch::test_hybrid_search_response_structure
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestSearchEdgeCases::test_search_special_characters
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/fts "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestSearchEdgeCases::test_search_special_characters
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestSearchEdgeCases::test_search_special_characters
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestSearchEdgeCases::test_search_very_long_query
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/fts "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestSearchEdgeCases::test_search_very_long_query
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestSearchEdgeCases::test_search_very_long_query
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestSearchEdgeCases::test_search_unicode_characters
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: POST http://testserver/v1/search/fts "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestSearchEdgeCases::test_search_unicode_characters
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestSearchEdgeCases::test_search_unicode_characters
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_stats.py::TestEmbeddingStats::test_get_embedding_stats
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/stats/embeddings "HTTP/1.1 404 Not Found"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_stats.py::TestEmbeddingStats::test_get_embedding_stats
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_stats.py::TestEmbeddingStats::test_get_embedding_stats
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_stats.py::TestAnalytics::test_get_analytics_overview
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/analytics/overview "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_stats.py::TestAnalytics::test_get_analytics_overview
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_stats.py::TestAnalytics::test_get_analytics_overview
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestGetVerseById::test_get_existing_verse
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses/NIV:1:1:1 "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestGetVerseById::test_get_existing_verse
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestGetVerseById::test_get_existing_verse
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestGetVerseById::test_get_nonexistent_verse
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses/INVALID:999:999:999 "HTTP/1.1 404 Not Found"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestGetVerseById::test_get_nonexistent_verse
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestGetVerseById::test_get_nonexistent_verse
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestGetVerseById::test_get_verse_different_translations
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses/NIV:1:1:1 "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses/ESV:1:1:1 "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestGetVerseById::test_get_verse_different_translations
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestGetVerseById::test_get_verse_different_translations
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListVerses::test_list_verses_genesis_1
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses?translation=NIV&book_number=1&chapter_number=1&limit=10 "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListVerses::test_list_verses_genesis_1
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListVerses::test_list_verses_genesis_1
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListVerses::test_list_verses_with_pagination
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses?translation=NIV&book_number=1&chapter_number=1&limit=5&offset=0 "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses?translation=NIV&book_number=1&chapter_number=1&limit=5&offset=5 "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListVerses::test_list_verses_with_pagination
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListVerses::test_list_verses_with_pagination
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListVerses::test_list_verses_missing_required_params
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses "HTTP/1.1 422 Unprocessable Entity"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListVerses::test_list_verses_missing_required_params
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListVerses::test_list_verses_missing_required_params
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListVerses::test_list_verses_invalid_book_number
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses?translation=NIV&book_number=999&chapter_number=1 "HTTP/1.1 422 Unprocessable Entity"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListVerses::test_list_verses_invalid_book_number
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListVerses::test_list_verses_invalid_book_number
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListVerses::test_list_verses_empty_chapter
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses?translation=NIV&book_number=1&chapter_number=999 "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListVerses::test_list_verses_empty_chapter
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListVerses::test_list_verses_empty_chapter
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListTranslations::test_list_translations_success
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses/translations "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListTranslations::test_list_translations_success
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListTranslations::test_list_translations_success
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListTranslations::test_list_translations_contains_common_translations
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses/translations "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListTranslations::test_list_translations_contains_common_translations
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListTranslations::test_list_translations_contains_common_translations
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListTranslations::test_list_translations_never_returns_404
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses/translations "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListTranslations::test_list_translations_never_returns_404
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListTranslations::test_list_translations_never_returns_404
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListBooks::test_list_books_success
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses/books?translation=NIV "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListBooks::test_list_books_success
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListBooks::test_list_books_success
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListBooks::test_list_books_genesis_first
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses/books?translation=NIV "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListBooks::test_list_books_genesis_first
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListBooks::test_list_books_genesis_first
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListBooks::test_list_books_missing_translation_param
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses/books "HTTP/1.1 422 Unprocessable Entity"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListBooks::test_list_books_missing_translation_param
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListBooks::test_list_books_missing_translation_param
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListBooks::test_list_books_invalid_translation
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses/books?translation=INVALID_TRANSLATION "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListBooks::test_list_books_invalid_translation
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListBooks::test_list_books_invalid_translation
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListBooks::test_list_books_never_returns_404
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses/books?translation=NIV "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListBooks::test_list_books_never_returns_404
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListBooks::test_list_books_never_returns_404
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListChapters::test_list_chapters_genesis
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses/chapters?translation=NIV&book_number=1 "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListChapters::test_list_chapters_genesis
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListChapters::test_list_chapters_genesis
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListChapters::test_list_chapters_missing_params
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses/chapters "HTTP/1.1 422 Unprocessable Entity"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListChapters::test_list_chapters_missing_params
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListChapters::test_list_chapters_missing_params
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListChapters::test_list_chapters_invalid_book
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses/chapters?translation=NIV&book_number=999 "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListChapters::test_list_chapters_invalid_book
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListChapters::test_list_chapters_invalid_book
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestRouteOrdering::test_translations_route_not_matched_as_verse_id
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses/translations "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestRouteOrdering::test_translations_route_not_matched_as_verse_id
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestRouteOrdering::test_translations_route_not_matched_as_verse_id
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestRouteOrdering::test_books_route_not_matched_as_verse_id
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:09 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:09 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses/books?translation=NIV "HTTP/1.1 200 OK"
+2025-10-09 04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestRouteOrdering::test_books_route_not_matched_as_verse_id
+2025-10-09 04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestRouteOrdering::test_books_route_not_matched_as_verse_id
+2025-10-09 04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:10 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:10 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestRouteOrdering::test_chapters_route_not_matched_as_verse_id
+2025-10-09 04:56:10 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+2025-10-09 04:56:10 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+2025-10-09 04:56:10 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+2025-10-09 04:56:10 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+2025-10-09 04:56:10 | DEBUG    | asyncio              | __init__                  | Using proactor: IocpProactor
+2025-10-09 04:56:10 | DEBUG    | tests                | client                    | TestClient ready
+2025-10-09 04:56:10 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+2025-10-09 04:56:10 | INFO     | httpx                | _send_single_request      | HTTP Request: GET http://testserver/v1/verses/chapters?translation=NIV&book_number=1 "HTTP/1.1 200 OK"
+2025-10-09 04:56:10 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestRouteOrdering::test_chapters_route_not_matched_as_verse_id
+2025-10-09 04:56:10 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestRouteOrdering::test_chapters_route_not_matched_as_verse_id
+2025-10-09 04:56:10 | DEBUG    | tests                | client                    | TestClient closed
+2025-10-09 04:56:10 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+2025-10-09 04:56:10 | INFO     | tests                | pytest_sessionfinish      | ================================================================================
+2025-10-09 04:56:10 | INFO     | tests                | pytest_sessionfinish      | Test Session Complete
+2025-10-09 04:56:10 | INFO     | tests                | pytest_sessionfinish      | Exit Status: 0
+2025-10-09 04:56:10 | INFO     | tests                | pytest_sessionfinish      | ================================================================================

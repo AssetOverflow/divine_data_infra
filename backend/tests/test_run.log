@@ -1,0 +1,992 @@
+04:56:08 | INFO     | tests                | pytest_configure          | ================================================================================
+04:56:08 | INFO     | tests                | pytest_configure          | Starting DivineHaven API Test Suite
+04:56:08 | INFO     | tests                | pytest_configure          | ================================================================================
+04:56:08 | INFO     | tests                | pytest_sessionstart       | Python version: 3.12.9
+04:56:08 | INFO     | tests                | pytest_sessionstart       | Test directory: D:\os-agnostic-fs\divinehaven-gpt-guided-build\backend
+04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetCRUD::test_create_asset
+04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:08 | WARNING  | backend.app.middleware.auth | __init__                  | JWTAuthMiddleware disabled - missing secret key
+04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetCRUD::test_create_asset
+04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetCRUD::test_create_asset
+04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetCRUD::test_list_assets
+04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetCRUD::test_list_assets
+04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetCRUD::test_list_assets
+04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetCRUD::test_get_asset_by_id
+04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetCRUD::test_get_asset_by_id
+04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetCRUD::test_get_asset_by_id
+04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetCRUD::test_update_asset
+04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetCRUD::test_update_asset
+04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetCRUD::test_update_asset
+04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetCRUD::test_delete_asset
+04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetCRUD::test_delete_asset
+04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetCRUD::test_delete_asset
+04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetSearch::test_asset_search
+04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetSearch::test_asset_search
+04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetSearch::test_asset_search
+04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetEmbeddings::test_get_asset_embedding
+04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetEmbeddings::test_get_asset_embedding
+04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetEmbeddings::test_get_asset_embedding
+04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetEmbeddings::test_set_asset_embedding
+04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetEmbeddings::test_set_asset_embedding
+04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetEmbeddings::test_set_asset_embedding
+04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetEmbeddings::test_delete_asset_embedding
+04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetEmbeddings::test_delete_asset_embedding
+04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetEmbeddings::test_delete_asset_embedding
+04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetVerseLinks::test_create_asset_links
+04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetVerseLinks::test_create_asset_links
+04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetVerseLinks::test_create_asset_links
+04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetVerseLinks::test_list_asset_links
+04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetVerseLinks::test_list_asset_links
+04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetVerseLinks::test_list_asset_links
+04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_assets.py::TestAssetVerseLinks::test_delete_asset_links
+04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:08 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_assets.py::TestAssetVerseLinks::test_delete_asset_links
+04:56:08 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_assets.py::TestAssetVerseLinks::test_delete_asset_links
+04:56:08 | DEBUG    | tests                | client                    | TestClient closed
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:08 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestBatchVerses::test_batch_verses_basic
+04:56:08 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:08 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:08 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:08 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:08 | DEBUG    | tests                | client                    | TestClient ready
+04:56:08 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestBatchVerses::test_batch_verses_basic
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestBatchVerses::test_batch_verses_basic
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestBatchVerses::test_batch_verses_deduplication
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestBatchVerses::test_batch_verses_deduplication
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestBatchVerses::test_batch_verses_deduplication
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestBatchVerses::test_batch_verses_missing_tracking
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestBatchVerses::test_batch_verses_missing_tracking
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestBatchVerses::test_batch_verses_missing_tracking
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestBatchVerses::test_batch_verses_max_limit
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestBatchVerses::test_batch_verses_max_limit
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestBatchVerses::test_batch_verses_max_limit
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestBatchVerses::test_batch_verses_empty_list
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestBatchVerses::test_batch_verses_empty_list
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestBatchVerses::test_batch_verses_empty_list
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestBatchVerses::test_batch_verses_response_structure
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestBatchVerses::test_batch_verses_response_structure
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestBatchVerses::test_batch_verses_response_structure
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_basic
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestTranslationComparison::test_translation_comparison_basic
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_basic
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_multiple_verses
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestTranslationComparison::test_translation_comparison_multiple_verses
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_multiple_verses
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_missing_translations
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestTranslationComparison::test_translation_comparison_missing_translations
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_missing_translations
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_max_references
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestTranslationComparison::test_translation_comparison_max_references
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_max_references
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_max_translations
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestTranslationComparison::test_translation_comparison_max_translations
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_max_translations
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_response_structure
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestTranslationComparison::test_translation_comparison_response_structure
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestTranslationComparison::test_translation_comparison_response_structure
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_basic
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_basic
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_basic
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_missing_tracking
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_missing_tracking
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_missing_tracking
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_max_limit
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_max_limit
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_max_limit
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_response_structure
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_response_structure
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_batch.py::TestEmbeddingLookup::test_embedding_lookup_response_structure
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_basic
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestChunkSearch::test_chunk_search_basic
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_basic
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_translation_filter
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_translation_filter
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_translation_filter
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_book_filter
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_book_filter
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_book_filter
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_testament_filter
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_testament_filter
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_testament_filter
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_window_size_filter
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_window_size_filter
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_window_size_filter
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_context
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_context
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_with_context
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_pagination
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestChunkSearch::test_chunk_search_pagination
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_pagination
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_wrong_dimension
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestChunkSearch::test_chunk_search_wrong_dimension
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_wrong_dimension
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_response_structure
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestChunkSearch::test_chunk_search_response_structure
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestChunkSearch::test_chunk_search_response_structure
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_chunks.py::TestGetChunkById::test_get_chunk_not_implemented
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_chunks.py::TestGetChunkById::test_get_chunk_not_implemented
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_chunks.py::TestGetChunkById::test_get_chunk_not_implemented
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_graph.py::TestParallels::test_get_parallels_by_verse_id
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_graph.py::TestParallels::test_get_parallels_by_verse_id
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_graph.py::TestParallels::test_get_parallels_by_verse_id
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_graph.py::TestParallels::test_get_parallels_by_cvk
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_graph.py::TestParallels::test_get_parallels_by_cvk
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_graph.py::TestParallels::test_get_parallels_by_cvk
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_graph.py::TestParallels::test_parallels_response_structure
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_graph.py::TestParallels::test_parallels_response_structure
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_graph.py::TestParallels::test_parallels_response_structure
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_health.py::TestHealth::test_health_check
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_health.py::TestHealth::test_health_check
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_health.py::TestHealth::test_health_check
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_health.py::TestHealth::test_health_check_always_available
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_health.py::TestHealth::test_health_check_always_available
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_health.py::TestHealth::test_health_check_always_available
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_health.py::TestMetrics::test_metrics_endpoint
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_health.py::TestMetrics::test_metrics_endpoint
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_health.py::TestMetrics::test_metrics_endpoint
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_health.py::TestRootEndpoint::test_root_endpoint
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_health.py::TestRootEndpoint::test_root_endpoint
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_health.py::TestRootEndpoint::test_root_endpoint
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestFullTextSearch::test_fts_basic_search
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestFullTextSearch::test_fts_basic_search
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestFullTextSearch::test_fts_basic_search
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestFullTextSearch::test_fts_with_translation_filter
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestFullTextSearch::test_fts_with_translation_filter
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestFullTextSearch::test_fts_with_translation_filter
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestFullTextSearch::test_fts_pagination
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestFullTextSearch::test_fts_pagination
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestFullTextSearch::test_fts_pagination
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestFullTextSearch::test_fts_empty_query
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestFullTextSearch::test_fts_empty_query
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestFullTextSearch::test_fts_empty_query
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestFullTextSearch::test_fts_limit_boundaries
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestFullTextSearch::test_fts_limit_boundaries
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestFullTextSearch::test_fts_limit_boundaries
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestFullTextSearch::test_fts_response_structure
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestFullTextSearch::test_fts_response_structure
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestFullTextSearch::test_fts_response_structure
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestVectorSearch::test_vector_search_basic
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestVectorSearch::test_vector_search_basic
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestVectorSearch::test_vector_search_basic
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestVectorSearch::test_vector_search_wrong_dimension
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestVectorSearch::test_vector_search_wrong_dimension
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestVectorSearch::test_vector_search_wrong_dimension
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestVectorSearch::test_vector_search_with_translation_filter
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestVectorSearch::test_vector_search_with_translation_filter
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestVectorSearch::test_vector_search_with_translation_filter
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestVectorSearch::test_vector_search_top_k_limits
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestVectorSearch::test_vector_search_top_k_limits
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestVectorSearch::test_vector_search_top_k_limits
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestVectorSearch::test_vector_search_response_structure
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestVectorSearch::test_vector_search_response_structure
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestVectorSearch::test_vector_search_response_structure
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestHybridSearch::test_hybrid_search_both_modes
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestHybridSearch::test_hybrid_search_both_modes
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestHybridSearch::test_hybrid_search_both_modes
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestHybridSearch::test_hybrid_search_text_only
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestHybridSearch::test_hybrid_search_text_only
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestHybridSearch::test_hybrid_search_text_only
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestHybridSearch::test_hybrid_search_vector_only
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestHybridSearch::test_hybrid_search_vector_only
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestHybridSearch::test_hybrid_search_vector_only
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestHybridSearch::test_hybrid_search_no_query
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestHybridSearch::test_hybrid_search_no_query
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestHybridSearch::test_hybrid_search_no_query
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestHybridSearch::test_hybrid_search_rrf_parameter
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestHybridSearch::test_hybrid_search_rrf_parameter
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestHybridSearch::test_hybrid_search_rrf_parameter
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestHybridSearch::test_hybrid_search_response_structure
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestHybridSearch::test_hybrid_search_response_structure
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestHybridSearch::test_hybrid_search_response_structure
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestSearchEdgeCases::test_search_special_characters
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestSearchEdgeCases::test_search_special_characters
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestSearchEdgeCases::test_search_special_characters
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestSearchEdgeCases::test_search_very_long_query
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestSearchEdgeCases::test_search_very_long_query
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestSearchEdgeCases::test_search_very_long_query
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_search.py::TestSearchEdgeCases::test_search_unicode_characters
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_search.py::TestSearchEdgeCases::test_search_unicode_characters
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_search.py::TestSearchEdgeCases::test_search_unicode_characters
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_stats.py::TestEmbeddingStats::test_get_embedding_stats
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_stats.py::TestEmbeddingStats::test_get_embedding_stats
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_stats.py::TestEmbeddingStats::test_get_embedding_stats
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_stats.py::TestAnalytics::test_get_analytics_overview
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_stats.py::TestAnalytics::test_get_analytics_overview
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_stats.py::TestAnalytics::test_get_analytics_overview
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestGetVerseById::test_get_existing_verse
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestGetVerseById::test_get_existing_verse
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestGetVerseById::test_get_existing_verse
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestGetVerseById::test_get_nonexistent_verse
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestGetVerseById::test_get_nonexistent_verse
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestGetVerseById::test_get_nonexistent_verse
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestGetVerseById::test_get_verse_different_translations
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestGetVerseById::test_get_verse_different_translations
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestGetVerseById::test_get_verse_different_translations
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListVerses::test_list_verses_genesis_1
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListVerses::test_list_verses_genesis_1
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListVerses::test_list_verses_genesis_1
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListVerses::test_list_verses_with_pagination
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListVerses::test_list_verses_with_pagination
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListVerses::test_list_verses_with_pagination
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListVerses::test_list_verses_missing_required_params
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListVerses::test_list_verses_missing_required_params
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListVerses::test_list_verses_missing_required_params
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListVerses::test_list_verses_invalid_book_number
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListVerses::test_list_verses_invalid_book_number
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListVerses::test_list_verses_invalid_book_number
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListVerses::test_list_verses_empty_chapter
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListVerses::test_list_verses_empty_chapter
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListVerses::test_list_verses_empty_chapter
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListTranslations::test_list_translations_success
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListTranslations::test_list_translations_success
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListTranslations::test_list_translations_success
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListTranslations::test_list_translations_contains_common_translations
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListTranslations::test_list_translations_contains_common_translations
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListTranslations::test_list_translations_contains_common_translations
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListTranslations::test_list_translations_never_returns_404
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListTranslations::test_list_translations_never_returns_404
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListTranslations::test_list_translations_never_returns_404
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListBooks::test_list_books_success
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListBooks::test_list_books_success
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListBooks::test_list_books_success
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListBooks::test_list_books_genesis_first
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListBooks::test_list_books_genesis_first
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListBooks::test_list_books_genesis_first
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListBooks::test_list_books_missing_translation_param
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListBooks::test_list_books_missing_translation_param
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListBooks::test_list_books_missing_translation_param
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListBooks::test_list_books_invalid_translation
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListBooks::test_list_books_invalid_translation
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListBooks::test_list_books_invalid_translation
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListBooks::test_list_books_never_returns_404
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListBooks::test_list_books_never_returns_404
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListBooks::test_list_books_never_returns_404
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListChapters::test_list_chapters_genesis
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListChapters::test_list_chapters_genesis
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListChapters::test_list_chapters_genesis
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListChapters::test_list_chapters_missing_params
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListChapters::test_list_chapters_missing_params
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListChapters::test_list_chapters_missing_params
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestListChapters::test_list_chapters_invalid_book
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestListChapters::test_list_chapters_invalid_book
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestListChapters::test_list_chapters_invalid_book
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestRouteOrdering::test_translations_route_not_matched_as_verse_id
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestRouteOrdering::test_translations_route_not_matched_as_verse_id
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestRouteOrdering::test_translations_route_not_matched_as_verse_id
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:09 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestRouteOrdering::test_books_route_not_matched_as_verse_id
+04:56:09 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:09 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:09 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:09 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:09 | DEBUG    | tests                | client                    | TestClient ready
+04:56:09 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:09 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestRouteOrdering::test_books_route_not_matched_as_verse_id
+04:56:09 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestRouteOrdering::test_books_route_not_matched_as_verse_id
+04:56:09 | DEBUG    | tests                | client                    | TestClient closed
+04:56:10 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:10 | DEBUG    | tests                | pytest_runtest_setup      | Setting up test: tests/test_verses.py::TestRouteOrdering::test_chapters_route_not_matched_as_verse_id
+04:56:10 | DEBUG    | tests                | mock_pg_conn              | Creating mock PostgreSQL connection
+04:56:10 | DEBUG    | tests                | mock_neo4j_session        | Creating mock Neo4j session
+04:56:10 | DEBUG    | tests                | override_db_dependencies  | Overriding database dependencies with mocks
+04:56:10 | DEBUG    | tests                | client                    | Creating TestClient with mocked dependencies
+04:56:10 | DEBUG    | tests                | client                    | TestClient ready
+04:56:10 | WARNING  | backend.app.utils.redis | get_redis_client          | Redis connection unavailable
+04:56:10 | INFO     | tests                | pytest_runtest_makereport | [PASS] tests/test_verses.py::TestRouteOrdering::test_chapters_route_not_matched_as_verse_id
+04:56:10 | DEBUG    | tests                | pytest_runtest_teardown   | Tearing down test: tests/test_verses.py::TestRouteOrdering::test_chapters_route_not_matched_as_verse_id
+04:56:10 | DEBUG    | tests                | client                    | TestClient closed
+04:56:10 | DEBUG    | tests                | override_db_dependencies  | Cleared database dependency overrides
+04:56:10 | INFO     | tests                | pytest_sessionfinish      | ================================================================================
+04:56:10 | INFO     | tests                | pytest_sessionfinish      | Test Session Complete
+04:56:10 | INFO     | tests                | pytest_sessionfinish      | Exit Status: 0
+04:56:10 | INFO     | tests                | pytest_sessionfinish      | ================================================================================

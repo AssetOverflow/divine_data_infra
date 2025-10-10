@@ -1,0 +1,7 @@
+# Note: For Docker, dependencies come from uv.lock in project root
+# This file is for running ETL standalone outside Docker
+
+SQLAlchemy>=2.0.35
+psycopg[binary]>=3.2.1
+neo4j>=5.23.0
+python-dotenv>=1.0.1

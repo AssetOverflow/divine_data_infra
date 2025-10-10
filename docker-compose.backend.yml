@@ -1,0 +1,99 @@
+name: divinehaven-backend-stack
+
+services:
+  db:
+    image: timescale/timescaledb-ha:pg17
+    container_name: ${STACK_NAME:-divinehaven-backend}-db
+    environment:
+      POSTGRES_DB: divinehaven
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-Fr00pzPlz}
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./scripts/db_init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d divinehaven"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  neo4j:
+    image: neo4j:5.25.1
+    container_name: ${STACK_NAME:-divinehaven-backend}-neo4j
+    environment:
+      NEO4J_AUTH: ${NEO4J_AUTH:-neo4j/password}
+      NEO4J_dbms_security_procedures_unrestricted: apoc.*
+      NEO4J_PLUGINS: '["apoc"]'
+      NEO4J_server_memory_heap_initial__size: 1G
+      NEO4J_server_memory_heap_max__size: 2G
+      NEO4J_dbms_memory_pagecache_size: 1G
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+
+  redis:
+    image: redis:7.2-alpine
+    container_name: ${STACK_NAME:-divinehaven-backend}-redis
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf:ro
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: ${STACK_NAME:-divinehaven-backend}-api
+    depends_on:
+      db:
+        condition: service_healthy
+      neo4j:
+        condition: service_started
+      redis:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg://postgres:${POSTGRES_PASSWORD:-Fr00pzPlz}@db:5432/divinehaven
+      PGVECTOR_DIM: "768"
+      NEO4J_URI: bolt://neo4j:7687
+      NEO4J_USER: ${NEO4J_USER:-neo4j}
+      NEO4J_PASSWORD: ${NEO4J_PASSWORD:-password}
+      APP_ENV: ${APP_ENV:-development}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:3000,http://127.0.0.1:3000}
+      REDIS_URL: redis://redis:6379/0
+      REDIS_CLIENT_NAME: divinehaven-backend
+      REDIS_MAX_CONNECTIONS: "64"
+      REDIS_SOCKET_TIMEOUT: "1.5"
+      REDIS_SOCKET_CONNECT_TIMEOUT: "1.5"
+      REDIS_RETRY_ON_TIMEOUT: "true"
+      REDIS_HEALTH_CHECK_INTERVAL: "30"
+      REDIS_SOCKET_KEEPALIVE: "true"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app/backend
+      - ./manifest.json:/app/manifest.json:ro
+      - ./unified_json_bibles:/app/unified_json_bibles:ro
+    command: >
+      uv run uvicorn backend.app.main:app --host 0.0.0.0 --port 8000 --reload
+
+volumes:
+  db_data:
+    name: ${TIMESCALE_VOLUME:-divinehaven_db_data}
+  neo4j_data:
+    name: ${NEO4J_DATA_VOLUME:-divinehaven_neo4j_data}
+  neo4j_logs:
+    name: ${NEO4J_LOGS_VOLUME:-divinehaven_neo4j_logs}
+  redis_data:
+    name: ${REDIS_VOLUME:-divinehaven_redis_data}

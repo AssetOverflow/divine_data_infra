@@ -1,0 +1,29 @@
+# Web Framework
+fastapi==0.118.2
+uvicorn[standard]==0.37.0
+
+# Database Drivers
+asyncpg==0.30.0
+neo4j==6.0.2
+
+# Redis Cache
+redis[hiredis]==6.4.0
+
+# Data Validation
+pydantic==2.12.0
+pydantic-settings==2.11.0
+
+# HTTP Client
+httpx==0.28.1
+
+# Configuration
+python-dotenv==1.1.1
+
+# Monitoring & Metrics
+prometheus-client==0.23.1
+
+# Testing (Development)
+pytest==8.3.4
+pytest-asyncio==1.2.0
+pytest-cov==7.0.0
+pytest-mock==3.14.0
