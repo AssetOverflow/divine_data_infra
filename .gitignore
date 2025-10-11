@@ -1,0 +1,185 @@
+# Environment Variables
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+
+# Python / FastAPI / Uv
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# C extensions
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments (Uv creates .venv by default)
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Uv-specific (caches and temporary files; commit uv.lock for reproducibility)
+.uv/
+uv-cache/
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.pytest_cache/
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# FastAPI specific
+*.pid
+instance/
+
+# Database (local files, dumps; TimescaleDB/pgvectorScale are typically remote/hosted)
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+dumps/
+backups/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+bun-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Frontend / Next.js / React / Bun
+# Dependencies
+node_modules/
+.npm/
+.yarn/
+
+# Bun-specific (commit bun.lockb for reproducibility, but ignore caches)
+.bun/
+bun-cache/
+
+# Production builds
+.next/
+out/
+dist/
+build/
+dist-ssr/
+
+# TypeScript
+*.tsbuildinfo
+
+# Yarn / Bun lockfiles (if not committing, uncomment below; otherwise keep committed)
+# bun.lockb
+# yarn.lock
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.vscode-test/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.buildpath
+.settings/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+
+# Ignore any large binary files or temporary uploads (if applicable)
+*.bin
+*.bak
+*.tmp
+

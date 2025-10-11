@@ -20,7 +20,7 @@ services:
       retries: 20
 
   neo4j:
-    image: neo4j:5.25.1
+    image: neo4j:latest
     container_name: ${STACK_NAME:-divinehaven-backend}-neo4j
     environment:
       NEO4J_AUTH: ${NEO4J_AUTH:-neo4j/password}

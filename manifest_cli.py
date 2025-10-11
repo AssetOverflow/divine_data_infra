@@ -350,29 +350,23 @@ class VectorIndexPlanner:
         )
 
         # Primary: Vectorscale DiskANN (cosine)
-        diskann_sql = textwrap.dedent(
-            r"""
-            -- DiskANN (vectorscale, cosine); memory_optimized for high recall
-            CREATE INDEX IF NOT EXISTS {idx}
-              ON {table} USING diskann ({cols})
-              WITH (storage_layout = 'memory_optimized');
-            """
-        ).strip()
+        diskann_sql = f"""-- DiskANN (vectorscale, cosine); memory_optimized for high recall
+CREATE INDEX IF NOT EXISTS {idx}
+  ON {table} USING diskann ({cols})
+  WITH (storage_layout = 'memory_optimized');"""
 
         # Fallbacks (commented) — safe docs only
         if isinstance(self.cfg, VectorScaleHNSW):
             m = self.cfg.params.get("m", 32)
             efc = self.cfg.params.get("ef_construction", 200)
-            hnsw_sql = textwrap.dedent(
-                r"""
-                -- pgvector HNSW fallback (cosine):
-                -- CREATE INDEX IF NOT EXISTS {idx}
-                --   ON {table} USING hnsw ({column} vector_cosine_ops)
-                --   WITH (m = {m}, ef_construction = {efc});
-                -- At query time:
-                --   SET hnsw.ef_search = {self.cfg.params.get("ef_search", 64)};
-                """
-            ).strip()
+            efs = self.cfg.params.get("ef_search", 64)
+            hnsw_sql = f"""
+-- pgvector HNSW fallback (cosine):
+-- CREATE INDEX IF NOT EXISTS {idx}
+--   ON {table} USING hnsw ({column} vector_cosine_ops)
+--   WITH (m = {m}, ef_construction = {efc});
+-- At query time:
+--   SET hnsw.ef_search = {efs};"""
             return diskann_sql + "\n" + hnsw_sql
 
         lists = (
@@ -380,16 +374,18 @@ class VectorIndexPlanner:
             if isinstance(self.cfg, VectorScaleIVF)
             else 2048
         )
-        ivf_sql = textwrap.dedent(
-            r"""
-            -- pgvector IVFFlat fallback (cosine):
-            -- CREATE INDEX IF NOT EXISTS {idx}
-            --   ON {table} USING ivfflat ({column} vector_cosine_ops)
-            --   WITH (lists = {lists});
-            -- At query time:
-            --   SET ivfflat.probes = {self.cfg.params.get("probes", 10)};
-            """
-        ).strip()
+        probes = (
+            self.cfg.params.get("probes", 8)
+            if isinstance(self.cfg, VectorScaleIVF)
+            else 8
+        )
+        ivf_sql = f"""
+-- pgvector IVFFlat fallback (cosine):
+-- CREATE INDEX IF NOT EXISTS {idx}
+--   ON {table} USING ivfflat ({column} vector_cosine_ops)
+--   WITH (lists = {lists});
+-- At query time:
+--   SET ivfflat.probes = {probes};"""
         return diskann_sql + "\n" + ivf_sql
 
 
@@ -480,20 +476,18 @@ def plan_indexes(
     m = load_manifest(manifest_path)
     planner = VectorIndexPlanner(m.index_plan.vectorscale)
 
+    fts_dict = m.index_plan.hybrid.fts.dictionary
+    
     statements = [
         planner.emit("verse_embedding", "embedding", with_labels=True),
         planner.emit("chunk_embedding", "embedding", with_labels=True),
         planner.emit("asset_embedding", "embedding", with_labels=False),
-        textwrap.dedent(
-            r"""
-            -- FTS index (idempotent). To rebuild, drop then create concurrently.
-            CREATE INDEX IF NOT EXISTS verse_text_gin
-              ON verse USING GIN (to_tsvector('{m.index_plan.hybrid.fts.dictionary}', text));
-            -- Rebuild (optional):
-            -- DROP INDEX CONCURRENTLY IF EXISTS verse_text_gin;
-            -- CREATE INDEX CONCURRENTLY IF NOT EXISTS verse_text_gin ON verse USING GIN (to_tsvector('{m.index_plan.hybrid.fts.dictionary}', text));
-            """
-        ).strip(),
+        f"""-- FTS index (idempotent). To rebuild, drop then create concurrently.
+CREATE INDEX IF NOT EXISTS verse_text_gin
+  ON verse USING GIN (to_tsvector('{fts_dict}', text));
+-- Rebuild (optional):
+-- DROP INDEX CONCURRENTLY IF EXISTS verse_text_gin;
+-- CREATE INDEX CONCURRENTLY IF NOT EXISTS verse_text_gin ON verse USING GIN (to_tsvector('{fts_dict}', text));"""
     ]
 
     typer.secho("-- Index Plan (apply in psql)", fg=typer.colors.CYAN, bold=True)
@@ -669,7 +663,7 @@ def ingest_bible(
             if book_rows:
                 psycopg_rows = ",".join(["(%s,%s,%s,%s)"] * len(book_rows))
                 cur.execute(
-                    r"""
+                    f"""
                     INSERT INTO book (translation_code, book_number, name, testament)
                     VALUES {psycopg_rows}
                     ON CONFLICT (translation_code, book_number) DO UPDATE
@@ -751,7 +745,7 @@ def ingest_bible(
                     batch = chapter_rows[i : i + batch_size]
                     values = ",".join(["(%s,%s,%s)"] * len(batch))
                     cur.execute(
-                        r"""
+                        f"""
                         INSERT INTO chapter (translation_code, book_number, chapter_number)
                         VALUES {values}
                         ON CONFLICT (translation_code, book_number, chapter_number) DO NOTHING;
@@ -764,7 +758,7 @@ def ingest_bible(
                     batch = verse_rows[i : i + batch_size]
                     values = ",".join(["(%s,%s,%s,%s,%s,%s,%s,%s)"] * len(batch))
                     cur.execute(
-                        r"""
+                        f"""
                         INSERT INTO verse (
                           translation_code, book_number, chapter_number, verse_number,
                           text, suffix, source_version, checksum
@@ -1029,7 +1023,7 @@ async def _embed_worker(
         texts = [r[1] for r in rows]
         embs = await _embed_batch_async(session, api_base, model, texts, keep_alive)
         payload = []
-        ts = datetime.utcnow().isoformat() + "Z"
+        ts = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
         for (verse_id, _t, lang, testament, book_no, tcode), vec in zip(rows, embs):
             if len(vec) != embedding_dim:
                 raise RuntimeError(
@@ -1218,14 +1212,17 @@ def embed_verses(
     where_parts: List[str] = []
     params: List[Any] = []
 
-    if translations:
-        where_parts.append("v.translation_code = ANY(%s)")
-        params.append(translations)
-
+    # Build the LEFT JOIN first (if needed) so params are in correct order
     if not reembed:
         sel_base += " LEFT JOIN verse_embedding e ON e.verse_id = v.verse_id AND e.embedding_model = %s AND e.embedding_dim = %s\n"
-        where_parts.append("(e.verse_id IS NULL)")
         params.extend([model, embedding_dim])
+        where_parts.append("(e.verse_id IS NULL)")
+
+    # Then add translation filter
+    if translations:
+        # psycopg automatically converts Python list to PostgreSQL array for ANY()
+        where_parts.append("v.translation_code = ANY(%s)")
+        params.append(translations)
 
     where_sql = ("WHERE " + " AND ".join(where_parts)) if where_parts else ""
     order_sql = " ORDER BY v.translation_code, v.book_number, v.chapter_number, v.verse_number, v.suffix"
@@ -1345,7 +1342,7 @@ def embed_verses(
                                     ["(%s, %s::vector, %s, %s, %s, %s)"] * len(upserts)
                                 )
                                 cur.execute(
-                                    r"""
+                                    f"""
                                     INSERT INTO verse_embedding
                                       (verse_id, embedding, embedding_model, embedding_dim, labels, metadata)
                                     VALUES {values_sql}
@@ -1418,12 +1415,14 @@ def embed_verses(
                             ["(%s, %s::vector, %s, %s, %s, %s)"] * len(upserts)
                         )
                         cur.execute(
-                            r"""
+                            f"""
                             INSERT INTO verse_embedding
                               (verse_id, embedding, embedding_model, embedding_dim, labels, metadata)
                             VALUES {values_sql}
-                            ON CONFLICT (verse_id, embedding_model, embedding_dim) DO UPDATE
+                            ON CONFLICT (verse_id) DO UPDATE
                             SET embedding = EXCLUDED.embedding,
+                                embedding_model = EXCLUDED.embedding_model,
+                                embedding_dim = EXCLUDED.embedding_dim,
                                 labels   = COALESCE(EXCLUDED.labels, verse_embedding.labels),
                                 metadata = EXCLUDED.metadata,
                                 embedding_ts = now();
@@ -1493,7 +1492,7 @@ def _extract_key(p: Path) -> str:
 @app.command("init")
 def manifest_init(
     out_path: Path = typer.Argument(
-        Path("manifest.json"), help="Where to write the new manifest"
+        Path("../manifest.json"), help="Where to write the new manifest"
     ),
     translations: List[str] = typer.Option(
         [
