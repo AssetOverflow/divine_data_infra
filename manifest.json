@@ -64,7 +64,12 @@
       "fusion": {
         "method": "rrf",
         "k": 60,
-        "weight_vector": null
+        "weight_vector": null,
+        "graph_expansion": {
+          "enabled": true,
+          "max_per_hit": 3,
+          "weight": 0.1
+        }
       },
       "fts": {
         "dictionary": "simple",

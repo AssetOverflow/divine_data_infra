@@ -104,6 +104,11 @@ class Settings(BaseSettings):
         description="Embedding model identifier for reference",
     )
 
+    MANIFEST_PATH: str = Field(
+        default="manifest.json",
+        description="Filesystem path to the active manifest configuration",
+    )
+
     # Auth / Security Configuration
     JWT_SECRET_KEY: str = Field(
         default="",

@@ -53,6 +53,7 @@ from .routers import (
     graph,
     health,
     monitoring,
+    retrieval,
     search,
     stats,
     user_profiles,
@@ -122,6 +123,7 @@ app.include_router(verses.router, prefix=settings.API_PREFIX)
 app.include_router(search.router, prefix=settings.API_PREFIX)
 app.include_router(stats.router, prefix=settings.API_PREFIX)
 app.include_router(graph.router, prefix=settings.API_PREFIX)
+app.include_router(retrieval.router, prefix=settings.API_PREFIX)
 app.include_router(chunks.router, prefix=settings.API_PREFIX)
 app.include_router(batch.router, prefix=settings.API_PREFIX)
 app.include_router(analytics.router, prefix=settings.API_PREFIX)

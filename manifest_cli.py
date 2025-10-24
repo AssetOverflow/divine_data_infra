@@ -108,10 +108,19 @@ class FTSOptions(BaseModel):
     stopwords: Optional[str] = None
 
 
+class GraphExpansionOptions(BaseModel):
+    enabled: bool = False
+    max_per_hit: int = Field(default=3, ge=0, le=50)
+    weight: float = Field(default=0.0, ge=0.0)
+
+
 class FusionOptions(BaseModel):
     method: Literal["rrf", "weighted_sum"] = "rrf"
     k: int = 60
     weight_vector: Optional[Dict[str, float]] = None  # if weighted_sum
+    graph_expansion: GraphExpansionOptions = Field(
+        default_factory=GraphExpansionOptions
+    )
 
 
 class HybridOptions(BaseModel):
