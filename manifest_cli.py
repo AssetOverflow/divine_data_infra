@@ -35,6 +35,14 @@ from typing import Any, Dict, List, Literal, Optional, Tuple
 import typer
 from pydantic import BaseModel, Field, ValidationError, field_validator
 
+from backend.validation import (
+    ManifestMetadata as ValidationManifest,
+    collect_verse_metrics,
+    validate_embedding_completeness,
+    validate_graph_edge_integrity,
+    validate_verse_coverage,
+)
+
 try:
     import psycopg
 except Exception:  # optional
@@ -590,6 +598,86 @@ def checksum_batches(
         with path.open("w", encoding="utf-8") as f:
             json.dump(manifest.model_dump(mode="json"), f, indent=2, ensure_ascii=False)
         typer.secho("Manifest updated with checksums ✔", fg=typer.colors.GREEN)
+
+
+# ---------------------------
+# CLI: Pre-ingest validations
+# ---------------------------
+@app.command("pre-ingest-validate")
+def pre_ingest_validate(
+    manifest_path: Path = typer.Option(
+        Path("manifest.json"),
+        "--manifest",
+        "-m",
+        help="Path to manifest.json describing the ingest run",
+    ),
+    corpus_dir: Path = typer.Option(
+        Path("unified_json_bibles"),
+        "--corpus-dir",
+        "-c",
+        help="Directory containing translation JSON payloads",
+    ),
+    base_translation: Optional[str] = typer.Option(
+        None,
+        "--base-translation",
+        help="Translation code to use as canonical baseline when checking graph edges",
+    ),
+    allow_empty_ratio: float = typer.Option(
+        0.0,
+        "--allow-empty-ratio",
+        min=0.0,
+        max=1.0,
+        help="Maximum ratio of verses allowed to have empty text before failing embedding checks",
+    ),
+    max_graph_gap: float = typer.Option(
+        0.02,
+        "--max-graph-gap",
+        min=0.0,
+        max=1.0,
+        help="Maximum tolerated ratio of missing canonical keys when validating graph edges",
+    ),
+) -> None:
+    """Run static validations against the corpus before ingestion."""
+
+    try:
+        manifest = ValidationManifest.from_path(manifest_path)
+    except Exception as exc:  # pragma: no cover - surfaced via CLI
+        typer.secho(f"Failed to load manifest: {exc}", fg=typer.colors.RED)
+        raise typer.Exit(code=2)
+
+    metrics, warnings = collect_verse_metrics(manifest, corpus_dir)
+
+    for warning in warnings:
+        typer.secho(f"WARN: {warning}", fg=typer.colors.YELLOW)
+
+    results = [
+        validate_verse_coverage(manifest, metrics),
+        validate_embedding_completeness(
+            manifest,
+            metrics,
+            allow_empty_ratio=allow_empty_ratio,
+        ),
+        validate_graph_edge_integrity(
+            manifest,
+            metrics,
+            base_translation=base_translation,
+            max_missing_ratio=max_graph_gap,
+        ),
+    ]
+
+    success = True
+    for result in results:
+        status = "PASS" if result.passed else "FAIL"
+        color = typer.colors.GREEN if result.passed else typer.colors.RED
+        label = result.name.replace("_", " ").title()
+        typer.secho(f"[{status}] {label}", fg=color)
+        for warn in result.warnings:
+            typer.secho(f"  - WARN: {warn}", fg=typer.colors.YELLOW)
+        for err in result.errors:
+            typer.secho(f"  - ERROR: {err}", fg=typer.colors.RED)
+        success = success and result.passed
+
+    raise typer.Exit(code=0 if success else 1)
 
 
 # ---------------------------
