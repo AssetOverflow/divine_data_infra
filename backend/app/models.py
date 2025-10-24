@@ -460,6 +460,151 @@ class EmbeddingLookupResponse(BaseModel):
 
 
 # ============================================================================
+# Session Memory Models - Conversational context and citation trails
+# ============================================================================
+
+
+class SessionCitationBase(BaseModel):
+    """Common fields shared by session citation payloads.
+
+    Attributes:
+        source_type: Domain-specific type that classifies the citation source
+            (for example ``"verse"`` or ``"asset"``).
+        source_id: Identifier for the source resource. The format is determined
+            by ``source_type`` and is opaque to this layer.
+        snippet: Optional text fragment or description highlighting the cited
+            content.
+        metadata: Optional arbitrary metadata supplied by agent clients to
+            describe structured citation details.
+    """
+
+    source_type: str
+    source_id: str
+    snippet: Optional[str] = None
+    metadata: Optional[Dict[str, Any]] = None
+
+    @field_validator("source_type", "source_id")
+    @classmethod
+    def _validate_non_empty(cls, value: str) -> str:
+        if not value or not value.strip():
+            raise ValueError("value must not be empty")
+        return value
+
+
+class SessionCitationCreate(SessionCitationBase):
+    """Payload describing a citation reference attached to a message."""
+
+    pass
+
+
+class SessionCitation(SessionCitationBase):
+    """Persisted citation record linked to a session message.
+
+    Attributes:
+        citation_id: Primary key for the citation record.
+        message_id: Identifier of the parent :class:`SessionMessage`.
+        created_at: Timestamp indicating when the citation was created.
+    """
+
+    citation_id: int
+    message_id: int
+    created_at: datetime
+
+
+class SessionMessageAppendRequest(BaseModel):
+    """Client payload for appending content to a conversation session.
+
+    Attributes:
+        role: The conversational role associated with the message. Supports the
+            canonical OpenAI schema roles (``system``, ``user``, ``assistant``,
+            ``tool``).
+        content: Natural language content for the message.
+        metadata: Optional arbitrary metadata attached to the message.
+        citations: Optional collection of citation descriptors that should be
+            linked to the message when persisted.
+    """
+
+    role: Literal["system", "user", "assistant", "tool"]
+    content: str
+    metadata: Optional[Dict[str, Any]] = None
+    citations: List[SessionCitationCreate] = Field(default_factory=list)
+
+    @field_validator("content")
+    @classmethod
+    def _validate_content(cls, value: str) -> str:
+        if not value or not value.strip():
+            raise ValueError("content must not be empty")
+        return value
+
+
+class SessionMessage(SessionMessageAppendRequest):
+    """Message enriched with persistence metadata and attached citations.
+
+    Attributes:
+        message_id: Primary key for the message.
+        session_id: Identifier of the session that owns the message.
+        created_at: Timestamp for when the message was persisted.
+        citations: Materialised citation instances for the message.
+    """
+
+    message_id: int
+    session_id: str
+    created_at: datetime
+    citations: List[SessionCitation] = Field(default_factory=list)
+
+
+class SessionMessageCreate(SessionMessageAppendRequest):
+    """Internal payload for persisting a new session message.
+
+    Attributes:
+        session_id: Identifier of the session that the message belongs to.
+    """
+
+    session_id: str
+
+
+class SessionMessageUpdate(BaseModel):
+    """Mutation payload for session messages.
+
+    Attributes:
+        role: Optional conversational role override.
+        content: Optional replacement text for the message body.
+        metadata: Optional metadata override for the message.
+        citations: Optional replacement citation descriptors for the message.
+    """
+
+    role: Optional[Literal["system", "user", "assistant", "tool"]] = None
+    content: Optional[str] = None
+    metadata: Optional[Dict[str, Any]] = None
+    citations: Optional[List[SessionCitationCreate]] = None
+
+    @field_validator("content")
+    @classmethod
+    def _validate_content(cls, value: Optional[str]) -> Optional[str]:
+        if value is not None and not value.strip():
+            raise ValueError("content must not be empty")
+        return value
+
+
+class SessionContextResponse(BaseModel):
+    """Paginated response containing a slice of session memory.
+
+    Attributes:
+        session_id: Identifier for the session whose context is returned.
+        total: Total number of messages stored for the session.
+        limit: Maximum number of messages included in this response.
+        offset: Offset applied when retrieving the messages.
+        items: Ordered list of :class:`SessionMessage` instances in the page.
+    """
+
+    session_id: str
+    total: int
+    limit: int
+    offset: int
+    items: List[SessionMessage]
+
+
+# ============================================================================
 # Chunk Search Models - Sliding window embeddings
 # ============================================================================
 
