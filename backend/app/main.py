@@ -52,6 +52,7 @@ from .routers import (
     chunks,
     graph,
     health,
+    memory,
     monitoring,
     retrieval,
     search,
@@ -128,6 +129,7 @@ app.include_router(chunks.router, prefix=settings.API_PREFIX)
 app.include_router(batch.router, prefix=settings.API_PREFIX)
 app.include_router(analytics.router, prefix=settings.API_PREFIX)
 app.include_router(assets.router, prefix=settings.API_PREFIX)
+app.include_router(memory.router, prefix=settings.API_PREFIX)
 app.include_router(user_profiles.router, prefix=settings.API_PREFIX)
 app.include_router(monitoring.router)  # No prefix - uses /metrics directly
 

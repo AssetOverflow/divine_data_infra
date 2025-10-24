@@ -339,6 +339,33 @@ CREATE TABLE IF NOT EXISTS run_manifest (
   created_at TIMESTAMPTZ DEFAULT now(),
   manifest   JSONB NOT NULL
 );
+
+-- Conversational session memory
+CREATE TABLE IF NOT EXISTS session_memory (
+  message_id   BIGSERIAL PRIMARY KEY,
+  session_id   TEXT NOT NULL,
+  role         TEXT NOT NULL CHECK (role IN ('system','user','assistant','tool')),
+  content      TEXT NOT NULL,
+  metadata     JSONB DEFAULT '{}'::jsonb,
+  created_at   TIMESTAMPTZ DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS session_memory_session_idx
+  ON session_memory (session_id, message_id);
+
+-- Citation trails attached to session messages
+CREATE TABLE IF NOT EXISTS session_citation (
+  citation_id BIGSERIAL PRIMARY KEY,
+  message_id  BIGINT NOT NULL REFERENCES session_memory(message_id) ON DELETE CASCADE,
+  source_type TEXT NOT NULL,
+  source_id   TEXT NOT NULL,
+  snippet     TEXT,
+  metadata    JSONB DEFAULT '{}'::jsonb,
+  created_at  TIMESTAMPTZ DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS session_citation_message_idx
+  ON session_citation (message_id);
 """.strip()
 
 
