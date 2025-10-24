@@ -105,6 +105,13 @@ class HybridQuery(BaseModel):
     translation: Optional[str] = None
 
 
+class RetrievalQuery(HybridQuery):
+    """Extended hybrid query enabling graph expansion toggles."""
+
+    include_parallels: bool = True
+    parallel_limit: int = Field(3, ge=0, le=50)
+
+
 class SearchHit(BaseModel):
     """Single search result with relevance score."""
 
@@ -118,6 +125,48 @@ class SearchResponse(BaseModel):
 
     total: int
     items: List[SearchHit]
+
+
+class GraphExpansion(BaseModel):
+    """Graph expansion for a verse including parallel renditions."""
+
+    verse_id: str
+    cvk: Optional[str] = None
+    renditions: List["Rendition"] = Field(default_factory=list)
+
+
+class GraphExpansionInfo(BaseModel):
+    """Metadata describing graph expansion parameters."""
+
+    enabled: bool
+    max_per_hit: int
+    weight: float
+    applied: bool
+
+
+class FusionInfo(BaseModel):
+    """Fusion metadata returned with retrieval responses."""
+
+    method: str
+    k: int
+    vector_k: int
+    fts_k: int
+    graph_expansion: GraphExpansionInfo
+
+
+class RetrievalHit(BaseModel):
+    """Combined retrieval result with optional graph expansion."""
+
+    hit: SearchHit
+    parallels: Optional[GraphExpansion] = None
+
+
+class RetrievalResponse(BaseModel):
+    """Response envelope for orchestrated retrieval."""
+
+    total: int
+    items: List[RetrievalHit]
+    fusion: FusionInfo
 
 
 # ============================================================================
