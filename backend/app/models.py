@@ -133,6 +133,23 @@ class Rendition(BaseModel):
     text: str
 
 
+class CanonicalVerse(BaseModel):
+    """Canonical verse metadata for graph neighbourhood responses."""
+
+    cvk: str
+    book_number: int
+    chapter_number: int
+    verse_number: int
+    suffix: str
+
+
+class GraphNeighborhood(BaseModel):
+    """Canonical verse node and its neighbouring renditions."""
+
+    canonical: CanonicalVerse
+    renditions: List[Rendition]
+
+
 class ParallelsResponse(BaseModel):
     """Parallel verses across translations."""
 
