@@ -1,0 +1,15 @@
+execution:
+  default_in_process:
+    config:
+      retries:
+        enabled: true
+        max_retries: 1
+        delay_in_seconds: 30
+storage:
+  filesystem:
+    config:
+      base_dir: "/tmp/dagster"
+run_coordinator:
+  default:
+    config:
+      dag_concurrency: 4
