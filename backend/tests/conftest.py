@@ -526,6 +526,14 @@ def override_db_dependencies(mock_pg_conn, mock_neo4j_session):
     settings.REDIS_URL = ""
     get_cache_manager.cache_clear()
 
+    from backend.app.db import postgres_async
+    from backend.app import main as app_main
+
+    original_init_pool = postgres_async.init_pool
+    original_app_init_pool = app_main.init_pool
+    postgres_async.init_pool = AsyncMock(return_value=AsyncMock())
+    app_main.init_pool = AsyncMock(return_value=AsyncMock())
+
     async def mock_get_pg():
         yield mock_pg_conn
 
@@ -535,7 +543,7 @@ def override_db_dependencies(mock_pg_conn, mock_neo4j_session):
     app.dependency_overrides[get_pg] = mock_get_pg
     app.dependency_overrides[get_neo4j_session] = mock_get_neo4j
 
-    yield
+    yield mock_neo4j_session
 
     # Cleanup
     app.dependency_overrides.clear()
@@ -543,6 +551,8 @@ def override_db_dependencies(mock_pg_conn, mock_neo4j_session):
     settings.RATE_LIMIT_ENABLED = previous_rate_limit
     settings.JWT_SECRET_KEY = previous_secret
     settings.REDIS_URL = previous_redis
+    postgres_async.init_pool = original_init_pool
+    app_main.init_pool = original_app_init_pool
     test_logger.debug("Cleared database dependency overrides")
 
 
