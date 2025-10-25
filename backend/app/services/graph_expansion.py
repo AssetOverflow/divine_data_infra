@@ -36,6 +36,13 @@ class GraphExpansionService:
              w.reference AS reference,
              w.text AS text
         WHERE verse_id IS NOT NULL
+        WITH source,
+             cvk,
+             verse_id,
+             translation,
+             reference,
+             text
+        ORDER BY translation, verse_id
         RETURN source,
                cvk,
                collect({

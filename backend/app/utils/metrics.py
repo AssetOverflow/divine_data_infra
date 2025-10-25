@@ -57,7 +57,7 @@ CACHE_MISSES = Counter(
 RATE_LIMIT_REJECTIONS = Counter(
     "rate_limit_rejections_total",
     "Requests rejected by the rate limiter",
-    labelnames=("identifier",),
+    labelnames=("identity_type",),
     namespace=NAMESPACE,
 )
 

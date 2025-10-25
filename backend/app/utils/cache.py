@@ -117,11 +117,12 @@ class CacheManager:
         if redis is None:
             return None
 
+        namespaced_key = self._namespaced(key)
         try:
-            payload = await redis.get(self._namespaced(key))
+            payload = await redis.get(namespaced_key)
         except RedisError as exc:
             logger.warning("Redis get failed", extra={"error": str(exc)})
-            CACHE_MISSES.labels(layer="l1").inc()
+            CACHE_MISSES.labels(layer="l2").inc()
             return None
 
         if payload is None:
@@ -136,10 +137,14 @@ class CacheManager:
             return None
 
         CACHE_HITS.labels(layer="l2").inc()
-        # Reset TTL for L1 using remaining TTL from Redis
-        ttl = await redis.ttl(self._namespaced(key))
-        if ttl is None or ttl < 0:
-            ttl = self.default_ttl
+        ttl = self.default_ttl
+        try:
+            ttl_response = await redis.ttl(namespaced_key)
+        except RedisError as exc:
+            logger.debug("Redis ttl failed", extra={"error": str(exc)})
+        else:
+            if ttl_response is not None and ttl_response >= 0:
+                ttl = ttl_response
         await self.l1.set(key, value, ttl=max(ttl, 0))
         return value
 

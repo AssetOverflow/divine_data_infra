@@ -3,9 +3,10 @@ DivineHaven Embeddings Service
 Handles query embedding generation via Ollama.
 """
 
-import httpx
-from typing import List, Optional
 import asyncio
+from typing import List
+
+import httpx
 
 
 class EmbeddingsService:
@@ -16,10 +17,13 @@ class EmbeddingsService:
         api_base: str = "http://localhost:11434",
         model: str = "embeddinggemma",
         timeout: float = 30.0,
+        max_concurrency: int = 8,
     ):
         self.api_base = api_base.rstrip("/")
         self.model = model
         self.timeout = timeout
+        concurrency = max(1, max_concurrency)
+        self._semaphore = asyncio.Semaphore(concurrency)
 
     async def embed_async(self, text: str) -> List[float]:
         """
@@ -90,7 +94,11 @@ class EmbeddingsService:
         Returns:
             List of embedding vectors (one per text)
         """
-        tasks = [self.embed_async(text) for text in texts]
+        async def _embed(text: str) -> List[float]:
+            async with self._semaphore:
+                return await self.embed_async(text)
+
+        tasks = [asyncio.create_task(_embed(text)) for text in texts]
         return await asyncio.gather(*tasks)
 
     def check_health(self) -> bool:
