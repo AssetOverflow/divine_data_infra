@@ -62,7 +62,7 @@ from .routers import (
 )
 from .db.postgres_async import init_pool
 from .utils.redis import close_redis
-from .db.neo4j import driver
+from .db.neo4j import close_driver, init_driver
 from .utils.logging import configure_logging
 from .utils.observability import configure_tracing
 
@@ -89,12 +89,14 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     await init_pool(min_size=1, max_size=16)
     cache = get_cache_manager()
 
+    await init_driver()
+
     try:
         # Application is running, yield control
         yield
     finally:
         # Shutdown: Clean up resources
-        await driver.close()
+        await close_driver()
         await cache.clear()
         await close_redis()
 

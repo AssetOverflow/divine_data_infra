@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from functools import lru_cache
 from typing import Dict
 
 from ..models import (
@@ -15,7 +14,7 @@ from ..models import (
     RetrievalResponse,
     SearchHit,
 )
-from ..utils.manifest import get_hybrid_config
+from ..utils.manifest import get_hybrid_config, get_manifest_generation
 from .graph_expansion import GraphExpansionService
 from .search_api import SearchApiService
 
@@ -33,14 +32,23 @@ class FusionStrategy:
     graph_weight: float
 
 
-@lru_cache(maxsize=1)
+_fusion_cache: FusionStrategy | None = None
+_fusion_generation: int | None = None
+
+
 def resolve_fusion_strategy() -> FusionStrategy:
     """Resolve the active fusion strategy from the manifest configuration."""
+
+    global _fusion_cache, _fusion_generation
+
+    generation = get_manifest_generation()
+    if _fusion_cache is not None and _fusion_generation == generation:
+        return _fusion_cache
 
     hybrid_cfg = get_hybrid_config()
     fusion_cfg = hybrid_cfg.fusion
     graph_cfg = fusion_cfg.graph_expansion
-    return FusionStrategy(
+    _fusion_cache = FusionStrategy(
         method=fusion_cfg.method,
         k_rrf=fusion_cfg.k,
         vector_k=hybrid_cfg.vector_k,
@@ -49,6 +57,8 @@ def resolve_fusion_strategy() -> FusionStrategy:
         graph_max_per_hit=graph_cfg.max_per_hit,
         graph_weight=graph_cfg.weight,
     )
+    _fusion_generation = generation
+    return _fusion_cache
 
 
 class RetrievalOrchestrator:

@@ -101,6 +101,7 @@ class SearchApiService:
             raise ValueError(
                 f"embedding length {len(body.embedding)} does not match dim {body.dim}"
             )
+        top_k = max(1, min(body.top_k, settings.PAGE_MAX))
         rows = await self._repo.search_hybrid(
             embedding=body.embedding,
             model=body.model,
@@ -111,7 +112,7 @@ class SearchApiService:
             fts_k=body.fts_k,
             vector_k=body.vector_k,
             k_rrf=body.k_rrf,
-            top_k=body.top_k,
+            top_k=top_k,
         )
         hits = [SearchHit(**row) for row in rows]
         return SearchResponse(total=len(hits), items=hits)

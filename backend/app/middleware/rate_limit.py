@@ -72,9 +72,11 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
         if not self.enabled:
             return await call_next(request)
 
-        identifier = self._identifier_for(request)
-        if identifier is None:
+        identity = self._identifier_for(request)
+        if identity is None:
             return await call_next(request)
+
+        identifier, identity_type = identity
 
         allowed, remaining, reset = await self._check(identifier)
         if allowed:
@@ -84,12 +86,13 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
                 "rate_limit_exceeded",
                 extra={
                     "identifier": identifier,
+                    "identity_type": identity_type,
                     "path": request.url.path,
                     "limit": self.limit,
                     "window_seconds": self.window_seconds,
                 },
             )
-            RATE_LIMIT_REJECTIONS.labels(identifier=identifier).inc()
+            RATE_LIMIT_REJECTIONS.labels(identity_type=identity_type).inc()
             response = JSONResponse(
                 status_code=429,
                 content={"detail": "Rate limit exceeded"},
@@ -112,15 +115,15 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
             return True
         return request.url.path in self.exempt_paths
 
-    def _identifier_for(self, request: Request) -> Optional[str]:
+    def _identifier_for(self, request: Request) -> Optional[tuple[str, str]]:
         user = getattr(request.state, "user", None)
         if user and isinstance(user, dict):
             subject = user.get("sub") or user.get("id")
             if subject:
-                return f"user:{subject}"
+                return f"user:{subject}", "authenticated"
         client = request.client
         if client and client.host:
-            return f"ip:{client.host}"
+            return f"ip:{client.host}", "anonymous"
         return None
 
     async def _check(self, identifier: str) -> tuple[bool, int, int]:

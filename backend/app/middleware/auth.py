@@ -55,7 +55,7 @@ class JWTAuthMiddleware(BaseHTTPMiddleware):
 
         authorization = request.headers.get("Authorization")
         if not authorization or not authorization.lower().startswith("bearer "):
-            return JSONResponse(status_code=401, content={"detail": "Unauthorized"})
+            return _unauthorized_response("Unauthorized")
 
         token = authorization.split(" ", 1)[1]
 
@@ -69,10 +69,10 @@ class JWTAuthMiddleware(BaseHTTPMiddleware):
             )
         except (JWTSignatureError, JWTExpiredError) as exc:
             logger.info("JWT validation failed", extra={"reason": str(exc)})
-            return JSONResponse(status_code=401, content={"detail": "Invalid token"})
+            return _unauthorized_response("Invalid token")
         except (JWTAlgorithmError, JWTClaimError, JWTError) as exc:
             logger.warning("JWT parsing error", extra={"error": str(exc)})
-            return JSONResponse(status_code=401, content={"detail": "Invalid token"})
+            return _unauthorized_response("Invalid token")
 
         request.state.user = payload
         request.state.authenticated = True
@@ -88,3 +88,13 @@ class JWTAuthMiddleware(BaseHTTPMiddleware):
 
 
 __all__ = ["JWTAuthMiddleware"]
+
+
+def _unauthorized_response(detail: str) -> JSONResponse:
+    """Return a RFC-compliant 401 response for Bearer authentication."""
+
+    return JSONResponse(
+        status_code=401,
+        content={"detail": detail},
+        headers={"WWW-Authenticate": "Bearer"},
+    )
