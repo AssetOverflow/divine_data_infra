@@ -204,6 +204,48 @@ class Settings(BaseSettings):
         default="divinehaven",
         description="Prometheus metrics namespace/prefix",
     )
+    OTEL_SERVICE_NAME: str = Field(
+        default="divinehaven-api",
+        description="Service name used for OpenTelemetry resources and logging",
+    )
+    TRACING_ENABLED: bool = Field(
+        default=True,
+        description="Toggle OpenTelemetry tracing instrumentation",
+    )
+    TRACING_EXPORTER: str = Field(
+        default="otlp",
+        description="Tracing exporter to use (otlp or jaeger)",
+    )
+    TRACING_SAMPLE_RATE: float = Field(
+        default=1.0,
+        description="Sampling ratio for tracing spans (0.0-1.0)",
+        ge=0.0,
+        le=1.0,
+    )
+    OTEL_EXPORTER_OTLP_ENDPOINT: str = Field(
+        default="localhost:4317",
+        description="OTLP collector endpoint (gRPC or HTTP depending on exporter)",
+    )
+    OTEL_EXPORTER_OTLP_HEADERS: str = Field(
+        default="",
+        description="Comma-separated list of OTLP headers (key=value)",
+    )
+    OTEL_EXPORTER_OTLP_INSECURE: bool = Field(
+        default=True,
+        description="Allow insecure transport when using OTLP exporter",
+    )
+    JAEGER_AGENT_HOST: str = Field(
+        default="localhost",
+        description="Jaeger agent host for Thrift exporter",
+    )
+    JAEGER_AGENT_PORT: int = Field(
+        default=6831,
+        description="Jaeger agent UDP port",
+    )
+    TRACING_EXCLUDED_PATHS: str = Field(
+        default="/metrics,/docs,/openapi.json,/redoc",
+        description="Comma-separated list of URL patterns to exclude from tracing",
+    )
     LOG_LEVEL: str = Field(
         default="INFO",
         description="Application log level for structured logging output",

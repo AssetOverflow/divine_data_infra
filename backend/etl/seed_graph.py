@@ -23,16 +23,41 @@ import argparse
 import asyncio
 import json
 import os
+import sys
 from pathlib import Path
 from typing import Optional, Set
 
 from dotenv import load_dotenv
+from opentelemetry import trace
+from prometheus_client import Counter, Histogram, start_http_server
+
+# Ensure repository root is on the Python path when executed as a script
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from backend.app.config import Settings
+from backend.app.utils.logging import configure_logging, get_logger
+from backend.app.utils.observability import configure_tracing
 
 from pg_client import PgClient
 from neo4j_client import Neo4jClient
 
 # Load environment variables from .env file
 load_dotenv()
+
+settings = Settings()
+
+configure_logging(settings.LOG_LEVEL, service_name=f"{settings.OTEL_SERVICE_NAME}-etl")
+logger = get_logger(__name__)
+
+tracer_provider = configure_tracing(
+    settings,
+    service_name=f"{settings.OTEL_SERVICE_NAME}-etl",
+    service_version="0.1.0",
+)
+
+tracer = trace.get_tracer("backend.etl.seed_graph")
 
 # Configuration from environment with sensible defaults
 DATABASE_URL = os.getenv(
@@ -45,6 +70,36 @@ NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "password")
 MANIFEST_JSON = os.getenv("MANIFEST_JSON", "./manifest.json")
 BATCH_SIZE = int(os.getenv("GRAPH_BATCH_SIZE", "5000"))
 LINK_MODE = os.getenv("GRAPH_LINK_MODE", "per-batch")
+ETL_METRICS_ENABLED = os.getenv("ETL_METRICS_ENABLED", "true").lower() == "true"
+ETL_METRICS_PORT = int(os.getenv("ETL_METRICS_PORT", "9001"))
+
+_METRICS_NAMESPACE = settings.METRICS_NAMESPACE
+
+ETL_ROWS_TOTAL = Counter(
+    "etl_rows_processed_total",
+    "Total rows processed by the Neo4j seeding ETL",
+    namespace=_METRICS_NAMESPACE,
+)
+ETL_BATCH_LATENCY = Histogram(
+    "etl_batch_latency_seconds",
+    "Time spent merging a batch into Neo4j",
+    namespace=_METRICS_NAMESPACE,
+    labelnames=("link_mode",),
+    buckets=(0.25, 0.5, 1, 2, 5, 10, 20, 40, 60),
+)
+ETL_BATCHES_TOTAL = Counter(
+    "etl_batches_total",
+    "Number of batches processed",
+    namespace=_METRICS_NAMESPACE,
+    labelnames=("link_mode",),
+)
+
+if ETL_METRICS_ENABLED:
+    start_http_server(ETL_METRICS_PORT)
+    logger.info(
+        "metrics_server_started",
+        extra={"port": ETL_METRICS_PORT, "namespace": _METRICS_NAMESPACE},
+    )
 
 
 def read_manifest(path: str) -> Optional[dict]:
@@ -98,51 +153,84 @@ async def run_async(batch_size: int, link_mode: str) -> None:
         - Neo4j operations run in thread pool to keep event loop responsive
         - Expected throughput: 5,000-10,000 verses/second depending on hardware
     """
-    manifest = read_manifest(MANIFEST_JSON)
-    if manifest:
-        run_id = manifest.get("run_id", "?")
-        model = manifest.get("embedding_recipe", {}).get("embedding_model", "?")
-        print(f"[seed] Manifest run_id: {run_id} | model: {model}")
-
-    # Initialize async Postgres client
-    async with PgClient(DATABASE_URL) as pg:
-        # Initialize sync Neo4j client (will run in thread pool)
-        g = Neo4jClient(NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD)
-        loop = asyncio.get_running_loop()
-
-        print("[seed] Ensuring constraints & indexes…")
-        await loop.run_in_executor(None, g.init_constraints)
-
-        total_rows = 0
-        touched_cvks: Set[str] = set()
-
-        print(f"[seed] Upserting Books/Chapters/Verses (batch size: {batch_size})…")
-        batch_count = 0
-
-        async for batch in pg.iter_verses(batch_size=batch_size):
-            batch_count += 1
-            # merge_batch returns Set[str] of canonical verse keys that were touched
-            cvks = await loop.run_in_executor(None, g.merge_batch, batch)
-            total_rows += len(batch)
-            print(
-                f"[seed] batch {batch_count:>5} upserted {len(batch):>5} rows (total {total_rows:,})"
+    with tracer.start_as_current_span(
+        "seed_graph.run",
+        attributes={"batch_size": batch_size, "link_mode": link_mode},
+    ):
+        manifest = read_manifest(MANIFEST_JSON)
+        if manifest:
+            run_id = manifest.get("run_id", "?")
+            model = manifest.get("embedding_recipe", {}).get("embedding_model", "?")
+            logger.info(
+                "manifest_loaded",
+                extra={"run_id": run_id, "embedding_model": model},
             )
 
-            if link_mode == "per-batch":
-                await loop.run_in_executor(None, g.link_parallels_for_cvks, cvks)
-            else:
-                touched_cvks.update(cvks)
+        # Initialize async Postgres client
+        async with PgClient(DATABASE_URL) as pg:
+            # Initialize sync Neo4j client (will run in thread pool)
+            g = Neo4jClient(NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD)
+            loop = asyncio.get_running_loop()
 
-        if link_mode == "post" and touched_cvks:
-            print(
-                f"[seed] Linking PARALLEL_TO across {len(touched_cvks):,} canonical keys…"
+            logger.info("initializing_constraints")
+            await loop.run_in_executor(None, g.init_constraints)
+
+            total_rows = 0
+            touched_cvks: Set[str] = set()
+
+            logger.info(
+                "starting_upserts",
+                extra={"batch_size": batch_size, "link_mode": link_mode},
             )
-            await loop.run_in_executor(None, g.link_parallels_for_cvks, touched_cvks)
+            batch_count = 0
 
-        # Clean shutdown
-        g.close()
+            async for batch in pg.iter_verses(batch_size=batch_size):
+                batch_count += 1
+                with tracer.start_as_current_span(
+                    "seed_graph.merge_batch",
+                    attributes={"batch_size": len(batch)},
+                ):
+                    with ETL_BATCH_LATENCY.labels(link_mode=link_mode).time():
+                        cvks = await loop.run_in_executor(None, g.merge_batch, batch)
 
-    print(f"[seed] ✓ Done. Total verses processed: {total_rows:,}")
+                batch_rows = len(batch)
+                total_rows += batch_rows
+                ETL_ROWS_TOTAL.inc(batch_rows)
+                ETL_BATCHES_TOTAL.labels(link_mode=link_mode).inc()
+
+                logger.info(
+                    "batch_processed",
+                    extra={
+                        "batch_number": batch_count,
+                        "rows": batch_rows,
+                        "total_rows": total_rows,
+                    },
+                )
+
+                if link_mode == "per-batch":
+                    with tracer.start_as_current_span(
+                        "seed_graph.link_parallels",
+                        attributes={"cvk_count": len(cvks)},
+                    ):
+                        await loop.run_in_executor(None, g.link_parallels_for_cvks, cvks)
+                else:
+                    touched_cvks.update(cvks)
+
+            if link_mode == "post" and touched_cvks:
+                logger.info(
+                    "linking_post_batches",
+                    extra={"cvk_count": len(touched_cvks)},
+                )
+                with tracer.start_as_current_span(
+                    "seed_graph.link_parallels_post",
+                    attributes={"cvk_count": len(touched_cvks)},
+                ):
+                    await loop.run_in_executor(None, g.link_parallels_for_cvks, touched_cvks)
+
+            # Clean shutdown
+            g.close()
+
+        logger.info("seed_complete", extra={"total_rows": total_rows})
 
 
 if __name__ == "__main__":

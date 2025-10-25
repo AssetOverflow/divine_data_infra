@@ -5,11 +5,20 @@ from __future__ import annotations
 import json
 import logging
 from datetime import datetime, timezone
-from typing import Any, Dict
+from typing import Any, Dict, Optional
+
+try:
+    from opentelemetry import trace
+except ModuleNotFoundError:  # pragma: no cover - optional dependency
+    trace = None  # type: ignore[assignment]
 
 
 class JsonFormatter(logging.Formatter):
     """Simple JSON formatter emitting structured log lines."""
+
+    def __init__(self, service_name: str | None = None) -> None:
+        super().__init__()
+        self._service_name = service_name
 
     def format(self, record: logging.LogRecord) -> str:  # noqa: D401
         """Format the log record as a JSON payload."""
@@ -22,6 +31,18 @@ class JsonFormatter(logging.Formatter):
             "logger": record.name,
             "message": record.getMessage(),
         }
+
+        if self._service_name:
+            base["service"] = self._service_name
+
+        span_context = None
+        if trace is not None:
+            span = trace.get_current_span()
+            span_context = span.get_span_context() if span else None
+        if span_context and span_context.trace_id:
+            base["trace_id"] = format(span_context.trace_id, "032x")
+            base["span_id"] = format(span_context.span_id, "016x")
+            base["trace_flags"] = int(span_context.trace_flags)
 
         if record.exc_info:
             base["exception"] = self.formatException(record.exc_info)
@@ -66,12 +87,12 @@ def _json_default(value: Any) -> Any:
     return str(value)
 
 
-def configure_logging(level: str = "INFO") -> None:
+def configure_logging(level: str = "INFO", service_name: Optional[str] = None) -> None:
     """Configure application-wide structured logging."""
 
     logging_level = getattr(logging, level.upper(), logging.INFO)
     handler = logging.StreamHandler()
-    handler.setFormatter(JsonFormatter())
+    handler.setFormatter(JsonFormatter(service_name=service_name))
 
     logging.basicConfig(level=logging_level, handlers=[handler], force=True)
 
