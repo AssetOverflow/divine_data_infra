@@ -1,0 +1,120 @@
+[
+  {
+    "name": "john_3_16_parallel",
+    "description": "Hybrid retrieval for John 3:16 with NIV focus and graph parallels",
+    "hybrid_request": {
+      "q": "loved the world",
+      "embedding": [0.12, 0.08, -0.04, 0.19],
+      "model": "embeddinggemma",
+      "dim": 4,
+      "vector_k": 5,
+      "fts_k": 5,
+      "k_rrf": 60,
+      "top_k": 3,
+      "translation": "NIV"
+    },
+    "expected_hybrid": [
+      {
+        "verse_id": "NIV:43:3:16",
+        "text": "For God so loved the world that he gave his one and only Son",
+        "score": 0.8421
+      },
+      {
+        "verse_id": "ESV:43:3:16",
+        "text": "For God so loved the world, that he gave his only Son",
+        "score": 0.8011
+      },
+      {
+        "verse_id": "NIV:43:3:17",
+        "text": "For God did not send his Son into the world to condemn the world",
+        "score": 0.6642
+      }
+    ],
+    "relevant": ["NIV:43:3:16", "ESV:43:3:16"],
+    "graph": {
+      "translation": "NIV",
+      "verse_fragment": "43:3:16",
+      "expected_translations": ["NIV", "ESV"],
+      "neo4j_payload": {
+        "cvk": "43:3:16:",
+        "book_number": 43,
+        "chapter_number": 3,
+        "verse_number": 16,
+        "suffix": "",
+        "renditions": [
+          {
+            "verse_id": "NIV_43_3_16",
+            "translation": "NIV",
+            "reference": "John 3:16",
+            "text": "For God so loved the world that he gave his one and only Son"
+          },
+          {
+            "verse_id": "ESV_43_3_16",
+            "translation": "ESV",
+            "reference": "John 3:16",
+            "text": "For God so loved the world, that he gave his only Son"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "genesis_creation_light",
+    "description": "Hybrid retrieval for creation narrative highlighting light motif",
+    "hybrid_request": {
+      "q": "let there be light",
+      "embedding": [0.05, 0.21, -0.11, 0.03],
+      "model": "embeddinggemma",
+      "dim": 4,
+      "vector_k": 5,
+      "fts_k": 5,
+      "k_rrf": 60,
+      "top_k": 3,
+      "translation": "ESV"
+    },
+    "expected_hybrid": [
+      {
+        "verse_id": "ESV:1:1:3",
+        "text": "And God said, 'Let there be light,' and there was light.",
+        "score": 0.8734
+      },
+      {
+        "verse_id": "NIV:1:1:3",
+        "text": "And God said, 'Let there be light,' and there was light.",
+        "score": 0.8422
+      },
+      {
+        "verse_id": "ESV:1:1:4",
+        "text": "And God saw that the light was good.",
+        "score": 0.7219
+      }
+    ],
+    "relevant": ["ESV:1:1:3", "NIV:1:1:3"],
+    "graph": {
+      "translation": "ESV",
+      "verse_fragment": "1:1:3",
+      "expected_translations": ["ESV", "NIV"],
+      "neo4j_payload": {
+        "cvk": "1:1:3:",
+        "book_number": 1,
+        "chapter_number": 1,
+        "verse_number": 3,
+        "suffix": "",
+        "renditions": [
+          {
+            "verse_id": "ESV_1_1_3",
+            "translation": "ESV",
+            "reference": "Genesis 1:3",
+            "text": "And God said, 'Let there be light,' and there was light."
+          },
+          {
+            "verse_id": "NIV_1_1_3",
+            "translation": "NIV",
+            "reference": "Genesis 1:3",
+            "text": "And God said, 'Let there be light,' and there was light."
+          }
+        ]
+      }
+    }
+  }
+]
