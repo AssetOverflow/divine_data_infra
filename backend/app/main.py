@@ -64,6 +64,7 @@ from .db.postgres_async import init_pool
 from .utils.redis import close_redis
 from .db.neo4j import driver
 from .utils.logging import configure_logging
+from .utils.observability import configure_tracing
 
 
 @asynccontextmanager
@@ -99,7 +100,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
 
 # FastAPI application instance
-configure_logging(settings.LOG_LEVEL)
+configure_logging(settings.LOG_LEVEL, service_name=settings.OTEL_SERVICE_NAME)
 
 app = FastAPI(
     title="DivineHaven API",
@@ -108,6 +109,27 @@ app = FastAPI(
     lifespan=lifespan,
     default_response_class=JSONResponse,
 )
+
+tracer_provider = configure_tracing(
+    settings,
+    service_name=settings.OTEL_SERVICE_NAME,
+    service_version="0.1.0",
+)
+
+if tracer_provider is not None:
+    try:
+        from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
+
+        FastAPIInstrumentor.instrument_app(
+            app,
+            tracer_provider=tracer_provider,
+            excluded_urls=settings.TRACING_EXCLUDED_PATHS,
+        )
+    except Exception:  # noqa: BLE001
+        # Failing to instrument tracing should not prevent the API from starting
+        import logging
+
+        logging.getLogger(__name__).exception("failed_to_instrument_fastapi")
 
 # CORS middleware configuration
 app.add_middleware(
